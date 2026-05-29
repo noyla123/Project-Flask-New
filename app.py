@@ -17,6 +17,8 @@ def index():
       return render_template('response.html', nama=C)
    return render_template('form.html')
 
+import os
+
 if __name__ == '__main__':
    port = int(os.environ.get("PORT", 5000))
    application.run(host='0.0.0.0', port=port)
