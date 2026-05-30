@@ -2,157 +2,119 @@
 <html>
 <head>
     <title>Hasil Enkripsi</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700i&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             min-height: 100vh;
-            background-image: url('https://pin.it/2z7SuqFia');
+            background-image: url('https://imgur.com/a/SoWT0Ip');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
             display: flex;
             align-items: center;
             justify-content: center;
             font-family: 'Inter', sans-serif;
         }
 
-        .overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(180, 50, 100, 0.25);
-            z-index: 0;
-        }
-
         .card {
-            background: rgba(255, 240, 248, 0.88);
-            backdrop-filter: blur(16px);
-            border-radius: 24px;
-            padding: 44px 38px;
-            width: 90%;
-            max-width: 420px;
-            position: relative;
-            z-index: 1;
-            box-shadow: 0 8px 32px rgba(180, 50, 100, 0.18);
-            border: 1.5px solid rgba(255, 182, 210, 0.6);
+            background: rgba(255, 230, 240, 0.22);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border-radius: 18px;
+            padding: 52px 48px;
+            width: 420px;
+            max-width: 90vw;
+            border: 1px solid rgba(255, 255, 255, 0.35);
             text-align: center;
         }
 
-        .top-bar {
-            display: flex;
-            align-items: center;
-            gap: 7px;
-            margin-bottom: 26px;
-        }
-
-        .dot { width: 8px; height: 8px; border-radius: 50%; }
-
-        .tag {
-            font-size: 11px;
-            font-weight: 600;
-            color: #993556;
-            background: #fce4ef;
-            padding: 4px 12px;
-            border-radius: 20px;
-            letter-spacing: 0.5px;
-            margin-left: auto;
-        }
-
         h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 30px;
-            color: #7a1a40;
-            margin-bottom: 8px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 32px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 6px;
+            letter-spacing: 1px;
         }
 
         .subtitle {
-            font-size: 13px;
-            color: #b05070;
-            margin-bottom: 26px;
+            font-size: 12.5px;
+            color: rgba(255, 255, 255, 0.78);
+            margin-bottom: 32px;
             line-height: 1.7;
+            font-weight: 300;
         }
 
         .result-box {
-            background: rgba(255, 220, 235, 0.6);
-            border: 1.5px solid #f4b8cc;
-            border-radius: 16px;
-            padding: 26px 22px;
-            margin-bottom: 22px;
+            border-top: 1px solid rgba(255, 255, 255, 0.25);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+            padding: 24px 0;
+            margin-bottom: 28px;
         }
 
         .result-label {
-            font-size: 11px;
-            font-weight: 700;
-            color: #993556;
-            letter-spacing: 0.8px;
+            font-size: 10px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.6);
+            letter-spacing: 1.5px;
             text-transform: uppercase;
-            margin-bottom: 12px;
+            margin-bottom: 14px;
         }
 
         .result-name {
-            font-family: 'Playfair Display', serif;
-            font-size: 28px;
-            color: #5a1030;
-            letter-spacing: 4px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 32px;
+            color: #fff;
+            letter-spacing: 5px;
             word-break: break-all;
         }
 
         .note {
             font-size: 12px;
-            color: #b05070;
-            margin-bottom: 22px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 26px;
             line-height: 1.7;
+            font-weight: 300;
         }
 
         .btn {
             display: block;
             width: 100%;
             padding: 14px;
-            background: linear-gradient(135deg, #d4537e, #99355a);
-            color: #fff;
-            border: none;
-            border-radius: 12px;
-            font-size: 14px;
-            font-weight: 700;
+            background: rgba(255, 255, 255, 0.92);
+            color: #7a1a40;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
             text-decoration: none;
             font-family: 'Inter', sans-serif;
-            letter-spacing: 0.5px;
-            transition: opacity 0.2s;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: background 0.2s;
         }
 
-        .btn:hover { opacity: 0.88; }
+        .btn:hover { background: #fff; }
 
         .footer-note {
             font-size: 11px;
-            color: #c490a8;
-            margin-top: 18px;
+            color: rgba(255, 255, 255, 0.45);
+            margin-top: 20px;
+            letter-spacing: 0.5px;
         }
     </style>
 </head>
 <body>
-    <div class="overlay"></div>
     <div class="card">
-        <div class="top-bar">
-            <div class="dot" style="background:#f4b8cc;"></div>
-            <div class="dot" style="background:#d4537e;"></div>
-            <div class="dot" style="background:#99355a;"></div>
-            <span class="tag">Hasil Enkripsi</span>
-        </div>
-
-        <h1>Berhasil! 🌸</h1>
-        <p class="subtitle">Nama baginda telah berhasil dienkripsi menggunakan Caesar Cipher.</p>
-
+        <h1>Berhasil!</h1>
+        <p class="subtitle">Nama baginda telah berhasil dienkripsi</p>
         <div class="result-box">
             <p class="result-label">Nama Terenkripsi</p>
             <p class="result-name">{{ nama }}</p>
         </div>
-
-        <p class="note">Selamat datang di pemrograman Python! Enkripsi adalah salah satu konsep dasar dalam keamanan data 💕</p>
-
-        <a href="/" class="btn">← Enkripsi Lagi</a>
-
-        <p class="footer-note">Caesar Cipher · Shift k = 3</p>
+        <p class="note">Selamat datang di pemrograman Python 🌸</p>
+        <a href="/" class="btn">Enkripsi Lagi</a>
+        <p class="footer-note">Caesar Cipher · k = 3</p>
     </div>
 </body>
 </html>
