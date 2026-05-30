@@ -1,117 +1,162 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Demo Text</title>
+    <title>Enkripsi Nama</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700i&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             min-height: 100vh;
-            background: linear-gradient(135deg, #fce4ec, #f8bbd0, #f48fb1);
+            background-image: url('https://imgur.com/a/6iXEAsn');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-family: 'Segoe UI', sans-serif;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(180, 50, 100, 0.25);
+            z-index: 0;
         }
 
         .card {
-            background: rgba(255, 255, 255, 0.6);
+            background: rgba(255, 240, 248, 0.88);
             backdrop-filter: blur(16px);
             border-radius: 24px;
-            padding: 50px 40px;
+            padding: 44px 38px;
             width: 90%;
-            max-width: 400px;
-            box-shadow: 0 8px 32px rgba(212, 83, 126, 0.2);
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.8);
+            max-width: 420px;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 8px 32px rgba(180, 50, 100, 0.18);
+            border: 1.5px solid rgba(255, 182, 210, 0.6);
         }
 
-        h2 {
-            font-size: 26px;
-            font-weight: bold;
-            color: #99355a;
-            margin-bottom: 8px;
-            letter-spacing: 1px;
+        .top-bar {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            margin-bottom: 26px;
+        }
+
+        .dot { width: 8px; height: 8px; border-radius: 50%; }
+
+        .tag {
+            font-size: 11px;
+            font-weight: 600;
+            color: #993556;
+            background: #fce4ef;
+            padding: 4px 12px;
+            border-radius: 20px;
+            letter-spacing: 0.5px;
+            margin-left: auto;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 30px;
+            color: #7a1a40;
+            margin-bottom: 10px;
+            line-height: 1.2;
         }
 
         .subtitle {
             font-size: 13px;
-            color: #c2607e;
-            margin-bottom: 30px;
+            color: #b05070;
+            margin-bottom: 28px;
+            line-height: 1.7;
         }
 
-        .input-group {
-            text-align: left;
-            margin-bottom: 20px;
-        }
+        .field { margin-bottom: 18px; }
 
         label {
             display: block;
-            font-size: 13px;
-            color: #99355a;
-            margin-bottom: 6px;
-            font-weight: 500;
+            font-size: 11px;
+            font-weight: 700;
+            color: #993556;
+            margin-bottom: 7px;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
         }
 
         input {
             width: 100%;
-            padding: 12px 16px;
-            border: 1.5px solid #f4c0d1;
+            padding: 13px 16px;
+            border: 1.5px solid #f4b8cc;
             border-radius: 12px;
-            background: rgba(255,255,255,0.7);
-            color: #4b1528;
-            font-size: 15px;
+            background: rgba(255, 255, 255, 0.75);
+            color: #5a1030;
+            font-size: 14px;
+            font-family: 'Inter', sans-serif;
             outline: none;
-            transition: border 0.2s;
+            transition: border-color 0.2s, background 0.2s;
         }
 
         input:focus {
             border-color: #d4537e;
+            background: #fff;
         }
 
-        input::placeholder {
-            color: #e093b1;
-        }
+        input::placeholder { color: #e8a0b8; }
 
-        button {
+        .btn {
             width: 100%;
             padding: 14px;
             background: linear-gradient(135deg, #d4537e, #99355a);
-            color: white;
+            color: #fff;
             border: none;
             border-radius: 12px;
-            font-size: 16px;
-            font-weight: 600;
+            font-size: 14px;
+            font-weight: 700;
             cursor: pointer;
-            margin-top: 10px;
+            margin-top: 8px;
+            font-family: 'Inter', sans-serif;
             letter-spacing: 0.5px;
             transition: opacity 0.2s;
         }
 
-        button:hover { opacity: 0.9; }
+        .btn:hover { opacity: 0.88; }
 
-        .decoration {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(212, 83, 126, 0.1);
+        .footer-note {
+            font-size: 11px;
+            color: #c490a8;
+            text-align: center;
+            margin-top: 18px;
         }
     </style>
 </head>
 <body>
+    <div class="overlay"></div>
     <div class="card">
-        <h2>🌸 Demo Text</h2>
-        <p class="subtitle">Masukkan nama kamu di bawah ini</p>
+        <div class="top-bar">
+            <div class="dot" style="background:#f4b8cc;"></div>
+            <div class="dot" style="background:#d4537e;"></div>
+            <div class="dot" style="background:#99355a;"></div>
+            <span class="tag">Caesar Cipher</span>
+        </div>
+
+        <h1>Enkripsi</h1>
+        <p class="subtitle">Masukkan nama lengkap baginda di bawah ini untuk dienkripsi 🌸</p>
+
         <form method="POST">
-            <div class="input-group">
+            <div class="field">
                 <label>Nama Depan</label>
-                <input type="text" name="namaDepan" placeholder="contoh: Budi" required>
+                <input type="text" name="namaDepan" placeholder="contoh: Putri" required>
             </div>
-            <div class="input-group">
+            <div class="field">
                 <label>Nama Belakang</label>
-                <input type="text" name="namaBelakang" placeholder="contoh: Santoso" required>
+                <input type="text" name="namaBelakang" placeholder="contoh: Maharani" required>
             </div>
-            <button type="submit">Kirim ✨</button>
+            <button type="submit" class="btn">Enkripsi Sekarang ✨</button>
         </form>
+
+        <p class="footer-note">Menggunakan algoritma Caesar Cipher (k = 3)</p>
     </div>
 </body>
 </html>
