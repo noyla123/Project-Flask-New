@@ -1,87 +1,95 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Hasil Enkripsi Kuromi</title>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <title>Hasil Enkripsi</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             min-height: 100vh;
-            background-image: url('PASTE_LINK_GAMBAR_DISINI');
-            background-size: cover;
-            background-position: center;
+            background: linear-gradient(135deg, #fce4ec, #f8bbd0, #f48fb1);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-family: 'Nunito', sans-serif;
-        }
-
-        .overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(10, 0, 30, 0.55);
-            z-index: 0;
+            font-family: 'Segoe UI', sans-serif;
         }
 
         .card {
-            background: rgba(20, 5, 45, 0.8);
-            border: 2px solid #7c3aed;
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(16px);
             border-radius: 24px;
-            padding: 45px 35px;
+            padding: 50px 40px;
             width: 90%;
             max-width: 400px;
+            box-shadow: 0 8px 32px rgba(212, 83, 126, 0.2);
             text-align: center;
-            position: relative;
-            z-index: 1;
-            box-shadow: 0 0 40px rgba(124, 58, 237, 0.4);
-            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
         }
 
-        .stars { position: absolute; top: 14px; right: 18px; font-size: 16px; opacity: 0.5; color: #c4b5fd; }
-        .bow { font-size: 36px; margin-bottom: 6px; }
-        h2 { font-size: 26px; font-weight: 800; color: #e2d4f0; margin-bottom: 6px; letter-spacing: 1px; }
-        .subtitle { font-size: 13px; color: #a78bca; margin-bottom: 24px; font-style: italic; }
+        h2 {
+            font-size: 26px;
+            font-weight: bold;
+            color: #99355a;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            font-size: 13px;
+            color: #c2607e;
+            margin-bottom: 30px;
+        }
 
         .result-box {
-            background: rgba(124, 58, 237, 0.15);
-            border: 1.5px solid #5b21b6;
+            background: linear-gradient(135deg, #fbeaf0, #f4c0d1);
             border-radius: 16px;
             padding: 24px;
             margin: 20px 0;
+            border: 1px solid #f4c0d1;
         }
 
-        .result-label { font-size: 13px; color: #a78bca; margin-bottom: 10px; font-weight: 700; }
-        .result-name { font-size: 24px; font-weight: 800; color: #e2d4f0; letter-spacing: 3px; word-break: break-all; }
-        .note { font-size: 13px; color: #7c5fa0; margin-bottom: 20px; font-style: italic; }
+        .result-label {
+            font-size: 13px;
+            color: #99355a;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .result-name {
+            font-size: 22px;
+            font-weight: bold;
+            color: #4b1528;
+            letter-spacing: 2px;
+        }
 
         .back-btn {
             display: block;
             padding: 14px;
-            background: linear-gradient(135deg, #7c3aed, #4c1d95);
+            background: linear-gradient(135deg, #d4537e, #99355a);
             color: white;
             border-radius: 12px;
-            font-size: 16px;
-            font-weight: 800;
+            font-size: 15px;
+            font-weight: 600;
             text-decoration: none;
-            box-shadow: 0 4px 20px rgba(124, 58, 237, 0.4);
+            margin-top: 10px;
+            width: 100%;
         }
+
         .back-btn:hover { opacity: 0.9; }
     </style>
 </head>
 <body>
-    <div class="overlay"></div>
     <div class="card">
-        <div class="stars">✦ ✦</div>
-        <div class="bow">🎀</div>
-        <h2>Hasil Enkripsi!</h2>
-        <p class="subtitle">~ nyehehehe, ini nama rahasiamu ~</p>
+        <h2>🌸 Hasil Enkripsi</h2>
+        <p class="subtitle">Berikut hasil enkripsi nama kamu</p>
         <div class="result-box">
-            <p class="result-label">☆ Nama Terenkripsi ☆</p>
+            <p class="result-label">Nama terenkripsi:</p>
             <p class="result-name">{{ nama }}</p>
         </div>
-        <p class="note">Selamat datang di pemrograman Python! 🖤</p>
-        <a href="/" class="back-btn">🎀 Kembali</a>
+        <p style="font-size:13px; color:#c2607e; margin-bottom:16px;">
+            Selamat datang di pemrograman Python! ✨
+        </p>
+        <a href="/" class="back-btn">🔙 Kembali</a>
     </div>
 </body>
 </html>
